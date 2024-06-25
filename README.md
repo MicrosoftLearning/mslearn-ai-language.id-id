@@ -1,1 +1,2 @@
-# mslearn-ai-language.id-id
+# mslearn-ai-language
+File lab untuk modul Azure AI Bahasa
