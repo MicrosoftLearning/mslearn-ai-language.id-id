@@ -37,7 +37,7 @@ Anda akan mengembangkan aplikasi ucapan menggunakan Visual Studio Code. File kod
 1. Buka palet (SHIFT+CTRL+P) dan jalankan **Git: Perintah klon** untuk mengkloning repositori `https://github.com/MicrosoftLearning/mslearn-ai-language` ke folder lokal (tidak masalah folder mana).
 1. Setelah repositori dikloning, buka folder di Visual Studio Code.
 
-    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up untuk meminta Anda memercayai kode yang Anda buka, klik tombol Option **Ya, saya memercayai penulis** di pop-up tersebut.
+    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up untuk meminta Anda memercayai kode yang Anda buka, klik opsi **Ya, saya memercayai penulis** di pop-up tersebut.
 
 1. Tunggu sementara file tambahan diinstal untuk mendukung proyek kode C# di repositori.
 
@@ -47,8 +47,8 @@ Anda akan mengembangkan aplikasi ucapan menggunakan Visual Studio Code. File kod
 
 Aplikasi untuk C# dan Python telah disediakan. Kedua aplikasi memiliki fungsionalitas yang sama. Pertama, Anda akan menyelesaikan beberapa bagian kunci aplikasi untuk mengaktifkannya menggunakan sumber daya Azure AI Speech Anda.
 
-1. Di Visual Studio Code, di panel **Penjelajah**, telusuri ke folder **Labfiles/08-speech-translation** dan luaskan folder **CSharp** atau **Python** tergantung pada preferensi bahasa Anda dan folder **penerjemah** yang ada di dalamnya. Setiap folder berisi file kode khusus bahasa untuk aplikasi tempat Anda akan mengintegrasikan fungsionalitas Azure AI Speech.
-1. Klik kanan folder **penerjemah** yang berisi file kode Anda dan buka terminal terintegrasi. Kemudian instal paket SDK Azure AI Speech dengan menjalankan perintah yang sesuai untuk preferensi bahasa Anda:
+1. Di Visual Studio Code, di panel **Penjelajah**, telusuri ke folder **Labfiles/08-speech-translation** dan luaskan folder **CSharp** atau **Python** tergantung pada preferensi bahasa Anda dan folder **translator** yang ada di dalamnya. Setiap folder berisi file kode khusus bahasa untuk aplikasi tempat Anda akan mengintegrasikan fungsionalitas Azure AI Speech.
+1. Klik kanan folder **translator** yang berisi file kode Anda dan buka terminal terintegrasi. Kemudian instal paket SDK Azure AI Speech dengan menjalankan perintah yang sesuai untuk preferensi bahasa Anda:
 
     **C#**
 
@@ -62,7 +62,7 @@ Aplikasi untuk C# dan Python telah disediakan. Kedua aplikasi memiliki fungsiona
     pip install azure-cognitiveservices-speech==1.30.0
     ```
 
-1. Di panel **Penjelajah**, di folder **penerjemah**, buka file konfigurasi untuk bahasa pilihan Anda
+1. Di panel **Penjelajah**, di folder **translator**, buka file konfigurasi untuk bahasa pilihan Anda
 
     - **C#**: appsettings.json
     - **Python**: .env

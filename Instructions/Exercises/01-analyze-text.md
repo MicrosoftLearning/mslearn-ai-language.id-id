@@ -12,7 +12,7 @@ Misalnya, agen perjalanan ingin memproses ulasan hotel yang telah dikirimkan ke 
 
 ## Memprovisikan sumber daya * Azure AI Bahasa*
 
-Jika Anda belum memilikinya di langganan, Anda harus menyediakan sumber daya **layanan Azure AI Bahasa** di langganan Azure Anda.
+Jika belum memilikinya di langganan, Anda harus menyediakan sumber daya **layanan Azure AI Bahasa** di langganan Azure Anda.
 
 1. Buka portal Microsoft Azure di `https://portal.azure.com`, dan masuk menggunakan akun Microsoft yang terkait dengan langganan Azure Anda.
 1. Di bidang pencarian di bagian atas, cari **layanan Azure AI**. Kemudian, dalam hasil, pilih **Buat** di bawah **Layanan Bahasa**.
@@ -38,7 +38,7 @@ Anda akan mengembangkan aplikasi analitik teks menggunakan Visual Studio Code. F
 2. Buka palet (SHIFT+CTRL+P) dan jalankan **Git: Perintah klon** untuk mengkloning repositori `https://github.com/MicrosoftLearning/mslearn-ai-language` ke folder lokal (tidak masalah folder mana).
 3. Setelah repositori dikloning, buka folder di Visual Studio Code.
 
-    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up untuk meminta Anda mempercayai kode yang Anda buka, klik **Ya, saya mempercayai opsi** penulis di pop-up.
+    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up untuk meminta Anda mempercayai kode yang Anda buka, klik opsi **Ya, saya mempercayai penulis** di pop-up.
 
 4. Tunggu sementara file tambahan diinstal untuk mendukung proyek kode C# di repositori.
 
@@ -145,7 +145,7 @@ Sekarang setelah Anda membuat klien untuk API, mari kita gunakan untuk mendeteks
     print('\nLanguage: {}'.format(detectedLanguage.primary_language.name))
     ```
 
-     > **Catatan**: *Dalam contoh ini, setiap ulasan dianalisis satu per satu, menghasilkan panggilan terpisah ke layanan untuk setiap file. Pendekatan alternatif adalah membuat kumpulan dokumen dan meneruskannya ke layanan dalam satu panggilan. Dalam kedua pendekatan tersebut, tanggapan dari layanan terdiri dari kumpulan dokumen; itulah sebabnya dalam kode Python di atas, indeks dokumen pertama (dan satu-satunya) dalam respons ([0]) ditentukan.*
+     > **Catatan**: *Dalam contoh ini, setiap ulasan dianalisis satu per satu, menghasilkan panggilan terpisah ke layanan untuk setiap file. Pendekatan alternatif adalah membuat kumpulan dokumen dan meneruskannya ke layanan dalam satu panggilan. Dalam kedua pendekatan tersebut, respons dari layanan terdiri dari kumpulan dokumen; itulah sebabnya dalam kode Python di atas, indeks dokumen pertama (dan satu-satunya) dalam respons ([0]) ditentukan.*
 
 1. Simpan perubahan Anda. Kemudian, kembali ke terminal terintegrasi untuk membuka folder **text-analysis**, dan jalankan kembali program.
 1. Amati hasilnya, perhatikan bahwa kali ini bahasa untuk setiap ulasan diidentifikasi.
