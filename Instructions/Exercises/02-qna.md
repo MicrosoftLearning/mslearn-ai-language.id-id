@@ -33,7 +33,7 @@ Jika belum berlangganan, Anda harus menyediakan sumber daya **layanan Azure AI B
     > **CATATAN** Jawaban atas Pertanyaan Kustom menggunakan Azure Cognitive Search untuk mengindeks dan mengkueri basis pengetahuan pertanyaan dan jawaban.
 
 1. Tunggu hingga penyebaran selesai, lalu buka sumber daya yang disebarkan.
-1. Tampilkan halaman Loop **Kunci dan Titik Akhir**. Anda akan membutuhkan informasi di halaman ini nanti dalam latihan.
+1. Tampilkan halaman **Kunci dan Titik Akhir**. Anda akan membutuhkan informasi di halaman ini nanti dalam latihan.
 
 ## Membuat Solusi Jawaban atas Pertanyaan
 
@@ -101,7 +101,7 @@ Sekarang setelah Anda memiliki basis pengetahuan, Anda dapat mengujinya di Langu
 1. Pada panel pengujian, di bagian bawah, masukkan pesan `What is Microsoft Learn?`. Respons yang tepat dari FAQ akan muncul.
 1. Masukkan pesan `Thanks!` Respons obrolan yang sesuai harus dikembalikan.
 1. Masukkan pesan `Tell me about Microsoft credentials`. Jawaban yang Anda buat harus dikembalikan bersama dengan tautan petunjuk tindak lanjut.
-1. Pilih tautan tindak lanjut**Pelajari selengkapnya tentang kredensial**. Jawaban tindak lanjut dengan tautan ke halaman sertifikasi harus dikembalikan.
+1. Pilih tautan tindak lanjut **Pelajari selengkapnya tentang kredensial**. Jawaban tindak lanjut dengan tautan ke halaman sertifikasi harus dikembalikan.
 1. Setelah selesai menguji basis pengetahuan, tutup panel pengujian.
 
 ## Sebarkan basis pengetahuan
@@ -112,7 +112,7 @@ Basis pengetahuan menyediakan layanan back-end yang dapat digunakan aplikasi kli
 1. Di bagian atas halaman, pilih **Sebarkan**. Kemudian pilih **Sebarkan** untuk mengonfirmasi bahwa Anda ingin menyebarkan basis pengetahuan.
 1. Saat penyebaran selesai, pilih **Dapatkan URL prediksi** untuk menampilkan titik akhir REST untuk basis pengetahuan Anda dan perhatikan bahwa permintaan sampel menyertakan parameter untuk:
     - **projectName**: Nama proyek Anda (yang seharusnya adalah *LearnFAQ*)
-    - **deploymentName**: Nama penerapan Anda (yang seharusnya adalah *produksi*)
+    - **deploymentName**: Nama penerapan Anda (yang seharusnya adalah *production*)
 1. Tutup kotak dialog URL prediksi.
 
 ## Bersiap untuk mengembangkan aplikasi di Visual Studio Code
@@ -185,7 +185,7 @@ Sekarang Anda sudah siap untuk menambahkan kode yang diperlukan untuk mengimpor 
     from azure.ai.language.questionanswering import QuestionAnsweringClient
     ```
 
-1. Dalam fungsi **Utama**, perhatikan bahwa kode untuk memuat titik akhir dan kunci layanan Azure AI Bahasa dari file konfigurasi telah disediakan. Kemudian temukan komentar **Buat klien menggunakan titik akhir dan kunci**, dan tambahkan kode berikut untuk membuat klien untuk API Analisis Teks:
+1. Dalam fungsi **Main**, perhatikan bahwa kode untuk memuat titik akhir dan kunci layanan Azure AI Bahasa dari file konfigurasi telah disediakan. Kemudian temukan komentar **Buat klien menggunakan titik akhir dan kunci**, dan tambahkan kode berikut untuk membuat klien untuk API Analisis Teks:
 
     **C#**: Programs.cs
 
@@ -204,7 +204,7 @@ Sekarang Anda sudah siap untuk menambahkan kode yang diperlukan untuk mengimpor 
     ai_client = QuestionAnsweringClient(endpoint=ai_endpoint, credential=credential)
     ```
 
-1. Di fungsi **Utama**, temukan komentar **Kirim pertanyaan dan tampilkan jawaban**, dan tambahkan kode berikut agar dapat membaca pertanyaan berulang kali dari baris perintah, mengirimkannya ke layanan, dan menampilkan detail jawabannya:
+1. Di fungsi **Main**, temukan komentar **Kirim pertanyaan dan tampilkan jawaban**, dan tambahkan kode berikut agar dapat membaca pertanyaan berulang kali dari baris perintah, mengirimkannya ke layanan, dan menampilkan detail jawabannya:
 
     **C#**: Programs.cs
 
