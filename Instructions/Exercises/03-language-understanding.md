@@ -20,19 +20,19 @@ Jenis input ini adalah contoh dari *ucapan* (sesuatu yang mungkin dikatakan atau
 
 ## Provisikan sumber daya *Azure AI Bahasa*
 
-Jika Anda belum memilikinya di langganan, Anda harus memprovisikan sumber daya**layanan Azure AI Bahasa** di langganan Azure Anda.
+Jika belum memilikinya di langganan, Anda harus menyediakan sumber daya **layanan Azure AI Bahasa** di langganan Azure Anda.
 
 1. Buka portal Microsoft Azure di `https://portal.azure.com`, dan masuk menggunakan akun Microsoft yang terkait dengan langganan Azure Anda.
 1. Di bidang pencarian di bagian atas, cari **layanan Azure AI**. Kemudian, dalam hasil, pilih **Buat** di bawah **Layanan Bahasa**.
 1. Pilih **Lanjutkan untuk membuat sumber daya Anda**.
 1. Provisikan sumber daya menggunakan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
-    - **Grup sumber daya**: *Pilih atau buat grup sumber daya*.
-    - **Wilayah**:*Pilih wilayah yang tersedia*
+    - **Grup sumber daya**: *Memilih atau membuat grup sumber daya*.
+    - **Wilayah**: *Pilih wilayah yang tersedia*
     - **Nama**: *Masukkan nama unik*.
     - **Tingkat harga**: Pilih **F0** (*gratis*), atau **S** (*standar*) jika F tidak tersedia.
     - **Pemberitahuan AI yang Bertanggung Jawab**: Setuju.
-1. Pilih **Tinjau + buat**, lalu pilih **Buat** untuk menyediakan sumber daya.
+1. Pilih **Tinjau + buat**, lalu pilih **Buat** untuk memprovisikan sumber daya.
 1. Tunggu hingga penyebaran selesai, lalu buka sumber daya yang disebarkan.
 1. Tampilkan halaman **Kunci dan Titik Akhir**. Anda akan memerlukan informasi di halaman ini nanti dalam latihan.
 
@@ -90,6 +90,8 @@ Untuk membantu model memprediksi niat mana yang diminta pengguna, Anda harus mem
     - `what's the time?`
     - `what time is it?`
     - `tell me the time`
+
+    > **CATATAN** Untuk menambahkan ucapan baru, tulis ucapan di kotak teks di samping niat lalu tekan ENTER. 
 
 1. Pilih niat **GetDay**dan tambahkan ucapan berikut sebagai sampel input untuk niat tersebut:
     - `what day is it?`
@@ -194,6 +196,8 @@ Dalam beberapa kasus, nilai yang valid untuk suatu entitas dapat dibatasi pada d
     |-------------------|---------|
     | `Sunday` | `Sun` |
 
+    > **CATATAN** Untuk memasukkan bidang daftar baru, sisipkan nilai `Sunday` di bidang teks, lalu klik bidang di mana 'Ketik nilai dan tekan enter...' ditampilkan, masukkan sinonim, lalu tekan ENTER.
+
 1. Ulangi langkah sebelumnya untuk menambahkan komponen daftar berikut:
 
     | Nilai | sinonim|
@@ -296,13 +300,13 @@ Dalam proyek nyata, Anda akan secara berulang memperbaiki niat dan entitas, mela
 
 Anda akan mengembangkan aplikasi pemahaman bahasa menggunakan Visual Studio Code. File kode untuk aplikasi Anda telah disediakan dalam repositori GitHub.
 
-> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di Visual Studio Code. Jika belum melakukannya, ikuti langkah-langkah berikut untuk mengkloningnya ke lingkungan pengembangan Anda.
+> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di kode Visual Studio. Atau, ikuti langkah-langkah ini untuk mengkloningnya ke lingkungan pengembangan Anda.
 
 1. Memulai Visual Studio Code.
 2. Buka palet (SHIFT+CTRL+P) dan jalankan **Git: Perintah klon** untuk mengkloning repositori `https://github.com/MicrosoftLearning/mslearn-ai-language` ke folder lokal (tidak masalah folder mana).
 3. Setelah repositori dikloning, buka folder di Visual Studio Code.
 
-    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up yang meminta Anda memercayai kode yang Anda buka, klik opsi **Ya, saya memercayai pembuatnya** di pop-up.
+    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up yang meminta Anda untuk memercayai kode yang Anda buka, klik opsi **Ya, saya memercayai penulisnya** pada pop-up tersebut.
 
 4. Tunggu sementara file tambahan diinstal untuk mendukung proyek kode C# di repositori.
 
@@ -310,7 +314,7 @@ Anda akan mengembangkan aplikasi pemahaman bahasa menggunakan Visual Studio Code
 
 ### Mengonfigurasi aplikasi Anda
 
-Aplikasi untuk C# dan Python telah disediakan, serta sampel file teks yang akan Anda gunakan untuk menguji ringkasan. Kedua aplikasi memiliki fungsionalitas yang sama. Pertama, Anda akan menyelesaikan beberapa bagian kunci aplikasi untuk mengaktifkannya agar dapat menggunakan sumber daya Azure AI Bahasa Anda.
+Aplikasi untuk C# dan Python telah disediakan, beserta contoh file teks yang akan Anda gunakan untuk menguji peringkasan. Kedua aplikasi memiliki fungsionalitas yang sama. Pertama, Anda akan menyelesaikan beberapa bagian kunci aplikasi untuk mengaktifkannya agar dapat menggunakan sumber daya Azure AI Bahasa Anda.
 
 1. Di Visual Studio Code, di panel **Penjelajah**, telusuri ke folder **Labfiles/03-language** dan luaskan folder **CSharp** atau **Python** tergantung pada preferensi bahasa Anda dan folder **jam-klien** yang ada di dalamnya. Setiap folder berisi file khusus bahasa untuk aplikasi yang akan Anda integrasikan dengan fungsionalitas jawaban atas pertanyaan Azure AI Bahasa.
 2. Klik kanan folder **jam-klien** yang berisi file kode Anda dan buka terminal terintegrasi. Kemudian instal paket SDK pemahaman bahasa percakapan Azure AI Bahasa dengan menjalankan perintah yang sesuai untuk preferensi bahasa Anda:
@@ -612,7 +616,7 @@ Sekarang Anda siap untuk menambahkan kode yang diperlukan untuk mengimpor pustak
 
 ## Membersihkan sumber daya
 
-Jika Anda selesai menjelajahi layanan Azure AI Bahasa, Anda dapat menghapus sumber daya yang Anda buat dalam latihan ini. Berikut caranya:
+Jika sudah selesai menjelajahi layanan Azure AI Bahasa, Anda dapat menghapus sumber daya yang Anda buat dalam latihan ini. Berikut caranya:
 
 1. Buka portal Microsoft Azure di `https://portal.azure.com`, dan masuk menggunakan akun Microsoft yang terkait dengan langganan Azure Anda.
 2. Telusuri ke sumber daya Azure AI Bahasa yang Anda buat di lab ini.
