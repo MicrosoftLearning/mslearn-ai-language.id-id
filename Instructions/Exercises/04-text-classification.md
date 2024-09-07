@@ -30,7 +30,7 @@ Jika Anda belum memilikinya di langganan, Anda harus memprovisikan sumber daya *
 
 1. Pilih **Tinjau + buat,** lalu pilih **Buat** untuk memprovisikan sumber daya.
 1. Tunggu hingga penyebaran selesai, lalu buka sumber daya yang disebarkan.
-1. Lihat halaman **Kunci dan Titik Akhir**. Anda akan memerlukan informasi di halaman ini nanti dalam latihan.
+1. Tampilkan halaman **Kunci dan Titik Akhir**. Anda akan memerlukan informasi di halaman ini nanti dalam latihan.
 
 ## Mengunggah artikel sampel
 
@@ -64,7 +64,7 @@ Setelah konfigurasi selesai, buat proyek klasifikasi teks kustom. Proyek ini men
 
     Jika Anda <u>tidak</u> diminta untuk memilih sumber daya bahasa, hal tersebut mungkin karena Anda memiliki beberapa sumber daya Bahasa dalam langganan Anda; dalam hal ini:
 
-    1. Di bilah di bagian atas halaman, pilih tombol **Pengaturan (&#9881;)**.
+    1. Pada bilah di bagian atas halaman, pilih tombol **Pengaturan (&#9881;)**.
     2. Pada halaman **Pengaturan**, lihat tab **Sumber Daya**.
     3. Pilih sumber daya bahasa yang baru saja Anda buat, dan klik **Ganti sumber daya**.
     4. Di bagian atas halaman, klik **Language Studio** untuk kembali ke beranda Language Studio
@@ -81,6 +81,8 @@ Setelah konfigurasi selesai, buat proyek klasifikasi teks kustom. Proyek ini men
 1. Di halaman **Pilih kontainer**, atur menu drop-down **Kontainer penyimpanan blob** ke kontainer *artikel* Anda.
 1. Pilih opsi **Tidak, saya perlu memberi label file saya sebagai bagian dari proyek ini**. Kemudian pilih **Berikutnya**.
 1. Pilih **Buat proyek**.
+
+> **Tips**: Jika Anda mendapatkan kesalahan tentang tidak berwenang untuk melakukan operasi ini, Anda harus menambahkan penetapan peran. Untuk memperbaikinya, kami menambahkan peran "Kontributor Data Blob Penyimpanan" pada akun penyimpanan untuk pengguna yang menjalankan lab. Rincian lebih lanjut dapat ditemukan [di halaman dokumentasi](https://learn.microsoft.com/azure/ai-services/language-service/custom-named-entity-recognition/how-to/create-project?tabs=portal%2Clanguage-studio#enable-identity-management-for-your-resource).
 
 ## Memberi label pada data Anda
 
@@ -149,13 +151,13 @@ Saat Anda puas dengan pelatihan model Anda, saatnya untuk menyebarkannya, yang m
 
 Untuk menguji kemampuan klasifikasi teks kustom layanan Azure AI Bahasa, Anda akan mengembangkan aplikasi konsol sederhana di Visual Studio Code.
 
-> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di Visual Studio Code. Jika tidak, ikuti langkah-langkah ini untuk mengkloningnya ke lingkungan pengembangan Anda.
+> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di Visual Studio Code. Jika belum melakukannya, ikuti langkah-langkah berikut untuk mengkloningnya ke lingkungan pengembangan Anda.
 
 1. Memulai Visual Studio Code.
 2. Buka palet (SHIFT+CTRL+P) dan jalankan **Git: Perintah klon** untuk mengkloning repositori `https://github.com/MicrosoftLearning/mslearn-ai-language` ke folder lokal (tidak masalah folder mana).
 3. Setelah repositori dikloning, buka folder di Visual Studio Code.
 
-    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up untuk meminta Anda mempercayai kode yang Anda buka, klik **Ya, saya mempercayai opsi** penulis di pop-up.
+    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up yang meminta Anda memercayai kode yang Anda buka, klik opsi **Ya, saya memercayai pembuatnya** di pop-up.
 
 4. Tunggu sementara file tambahan diinstal untuk mendukung proyek kode C# di repositori.
 
@@ -163,7 +165,7 @@ Untuk menguji kemampuan klasifikasi teks kustom layanan Azure AI Bahasa, Anda ak
 
 ## Mengonfigurasi aplikasi Anda
 
-Aplikasi untuk C# dan Python telah disediakan, serta sampel file teks yang akan Anda gunakan untuk menguji ringkasan. Kedua aplikasi memiliki fungsionalitas yang sama. Pertama, Anda akan menyelesaikan beberapa bagian utama aplikasi untuk mengaktifkannya menggunakan sumber daya Azure AI Bahasa Anda.
+Aplikasi untuk C# dan Python telah disediakan, beserta contoh file teks yang akan Anda gunakan untuk menguji peringkasan. Kedua aplikasi memiliki fungsionalitas yang sama. Pertama, Anda akan menyelesaikan beberapa bagian utama aplikasi untuk mengaktifkannya menggunakan sumber daya Azure AI Bahasa Anda.
 
 1. Di Visual Studio Code, di panel **Explorer**, telusuri ke folder **Labfiles/04-text-classification** dan perluas folder **CSharp** atau **Python** tergantung pada preferensi bahasa Anda dan folder **classify-text** yang ada di dalamnya. Setiap folder berisi file khusus bahasa untuk aplikasi tempat Anda akan mengintegrasikan fungsionalitas klasifikasi teks Azure AI Bahasa.
 1. Klik kanan folder **classify-text** yang berisi file kode Anda dan buka terminal terintegrasi. Kemudian instal paket SDK Analisis Teks Azure AI Bahasa dengan menjalankan perintah yang sesuai untuk preferensi bahasa Anda:

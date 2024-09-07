@@ -12,7 +12,7 @@ Untuk menguji ekstraksi entitas kustom, kita akan membuat model dan melatihnya m
 
 ## Memprovisikan sumber daya * Azure AI Bahasa*
 
-Jika Anda belum memilikinya di langganan, Anda harus menyediakan sumber daya **layanan Azure AI Bahasa** Selain itu, gunakan klasifikasi teks kustom, Anda perlu mengaktifkan fitur **Klasifikasi teks kustom & ekstraksi**.
+Jika Anda belum memilikinya di langganan, Anda harus memprovisikan sumber daya **layanan Azure AI Bahasa**. Selain itu, untuk menggunakan klasifikasi teks kustom, Anda perlu mengaktifkan fitur **Klasifikasi teks kustom & ekstraksi**.
 
 1. Di browser, buka portal Microsoft Azure di `https://portal.azure.com`, dan masuk dengan akun Microsoft Anda.
 1. Pilih tombol **Buat sumber daya**, cari *Bahasa*, dan buat sumber daya **Layanan Bahasa**. Saat berada di halaman untuk *Pilih fitur tambahan*, pilih fitur kustom yang berisi **Ekstraksi pengenalan entitas bernama kustom**. Buat sumber daya dengan pengaturan berikut:
@@ -23,12 +23,12 @@ Jika Anda belum memilikinya di langganan, Anda harus menyediakan sumber daya **l
     - **Tingkat harga**: Pilih **F0** (*gratis*), atau **S** (*standar*) jika F tidak tersedia.
     - **Storage account**: Akun penyimpanan baru:
       - **Nama akun penyimpanan**: *Masukkan nama yang unik*.
-      - **Jenis akun Storage**: LRS Standar
+      - **Tipe akun penyimpanan**: LRS Standar
     - **Pemberitahuan AI yang bertanggung jawab**: Dipilih.
 
-1. Pilih **Tinjau + buat**, lalu pilih **Buat** untuk memprovisikan sumber daya.
+1. Pilih **Tinjau + buat,** lalu pilih **Buat** untuk memprovisikan sumber daya.
 1. Tunggu hingga penyebaran selesai, lalu buka sumber daya yang disebarkan.
-1. Lihat halaman **Kunci dan Titik Akhir**. Anda akan memerlukan informasi di halaman ini nanti dalam latihan.
+1. Tampilkan halaman **Kunci dan Titik Akhir**. Anda akan memerlukan informasi di halaman ini nanti dalam latihan.
 
 ## Unggah iklan contoh
 
@@ -40,7 +40,7 @@ Setelah membuat Layanan Azure AI Bahasa dan akun penyimpanan, Anda harus mengung
 
 3. Di akun penyimpanan Anda pilih **Konfigurasi**, yang terletak di bawah **Pengaturan**, dan layar mengaktifkan opsi untuk **Izinkan akses anonim Blob** lalu pilih **Simpan**.
 
-4. Pilih **Kontainer** dari menu sebelah kiri, yang terletak di bawah **Penyimpanan data**. Pada layar yang muncul, pilih **+ Kontainer**. Beri kontainer nama `classifieds`, dan atur tingkat akses **Anonim** ke Kontainer **(akses baca anonim untuk kontainer dan blob)**.
+4. Pilih **Kontainer** dari menu sebelah kiri, yang terletak di bawah **Penyimpanan data**. Pada layar yang muncul, pilih **+ Kontainer**. Beri kontainer nama `classifieds`, dan atur **Tingkat akses anonim** ke **Kontainer (akses baca anonim untuk kontainer dan blob)**.
 
     > **CATATAN**: Saat Anda mengonfigurasi akun penyimpanan untuk solusi nyata, berhati-hatilah untuk menetapkan tingkat akses yang sesuai. Untuk mempelajari selengkapnya tentang setiap tingkat akses, lihat [dokumentasi Azure Storage](https://learn.microsoft.com/azure/storage/blobs/anonymous-read-access-configure).
 
@@ -79,6 +79,8 @@ Sekarang Anda siap untuk membuat proyek pengenalan entitas bernama kustom. Proye
     - **Kontainer:**
         - **kontainer penyimpanan Blob**: diklasifikasikan
         - **Apakah file Anda diberi label dengan kelas?**: Tidak, saya perlu memberi label pada file saya sebagai bagian dari proyek ini
+
+> **Tips**: Jika Anda mendapatkan kesalahan tentang tidak berwenang untuk melakukan operasi ini, Anda harus menambahkan penetapan peran. Untuk memperbaikinya, kami menambahkan peran "Kontributor Data Blob Penyimpanan" pada akun penyimpanan untuk pengguna yang menjalankan lab. Rincian lebih lanjut dapat ditemukan [di halaman dokumentasi](https://learn.microsoft.com/azure/ai-services/language-service/custom-named-entity-recognition/how-to/create-project?tabs=portal%2Clanguage-studio#enable-identity-management-for-your-resource).
 
 ## Memberi label pada data Anda
 
@@ -131,13 +133,13 @@ Saat Anda puas dengan pelatihan model Anda, inilah saatnya untuk menerapkannya, 
 
 Untuk menguji kemampuan ekstraksi entitas kustom layanan Azure AI Bahasa, Anda akan mengembangkan aplikasi konsol sederhana di Visual Studio Code.
 
-> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di kode Visual Studio. Jika tidak, ikuti langkah-langkah ini untuk mengkloningnya ke lingkungan pengembangan Anda.
+> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di kode Visual Studio. Jika belum melakukannya, ikuti langkah-langkah berikut untuk mengkloningnya ke lingkungan pengembangan Anda.
 
 1. Memulai Visual Studio Code.
 2. Buka palet (SHIFT+CTRL+P) dan jalankan **Git: Perintah klon** untuk mengkloning repositori `https://github.com/MicrosoftLearning/mslearn-ai-language` ke folder lokal (tidak masalah folder mana).
 3. Setelah repositori dikloning, buka folder di Visual Studio Code.
 
-    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up untuk meminta Anda mempercayai kode yang Anda buka, klik **Ya, saya mempercayai opsi** penulis di pop-up.
+    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up yang meminta Anda memercayai kode yang Anda buka, klik opsi **Ya, saya memercayai pembuatnya** di pop-up.
 
 4. Tunggu sementara file tambahan diinstal untuk mendukung proyek kode C# di repositori.
 
