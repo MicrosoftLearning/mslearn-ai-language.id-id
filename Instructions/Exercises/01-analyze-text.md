@@ -15,7 +15,8 @@ Misalnya, agen perjalanan ingin memproses ulasan hotel yang telah dikirimkan ke 
 Jika belum memilikinya di langganan, Anda harus menyediakan sumber daya **layanan Azure AI Bahasa** di langganan Azure Anda.
 
 1. Buka portal Microsoft Azure di `https://portal.azure.com`, dan masuk menggunakan akun Microsoft yang terkait dengan langganan Azure Anda.
-1. Di bidang pencarian di bagian atas, cari **layanan Azure AI**. Kemudian, dalam hasil, pilih **Buat** di bawah **Layanan Bahasa**.
+1. Pilih **Buat sumber daya**.
+1. Di bidang pencarian, cari **Layanan bahasa**. Kemudian, dalam hasil, pilih **Buat** di bawah **Layanan Bahasa**.
 1. Pilih **Lanjutkan untuk membuat sumber daya Anda**.
 1. Provisikan sumber daya menggunakan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
@@ -24,21 +25,21 @@ Jika belum memilikinya di langganan, Anda harus menyediakan sumber daya **layana
     - **Nama**: *Masukkan nama unik*.
     - **Tingkat harga**: Pilih **F0** (*gratis*), atau **S** (*standar*) jika F tidak tersedia.
     - **Pemberitahuan AI yang Bertanggung Jawab**: Setuju.
-1. Pilih **Tinjau + buat**, lalu pilih **Buat** untuk memprovisikan sumber daya.
+1. Pilih **Tinjau + buat**, lalu pilih **Buat** untuk menyediakan sumber daya.
 1. Tunggu hingga penyebaran selesai, lalu buka sumber daya yang disebarkan.
-1. Lihat halaman **Kunci dan Titik Akhir**. Anda akan memerlukan informasi di halaman ini nanti dalam latihan.
+1. Lihat halaman **Titik Akhir dan Kunci** di bagian **Manajemen Sumber Daya**. Anda akan memerlukan informasi di halaman ini nanti dalam latihan.
 
 ## Bersiap untuk mengembangkan aplikasi di Visual Studio Code
 
 Anda akan mengembangkan aplikasi analitik teks menggunakan Visual Studio Code. File kode untuk aplikasi Anda telah disediakan di repositori GitHub.
 
-> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di Visual Studio Code. Jika tidak, ikuti langkah-langkah ini untuk mengkloningnya ke lingkungan pengembangan Anda.
+> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di Visual Studio Code. Jika belum melakukannya, ikuti langkah-langkah berikut untuk mengkloningnya ke lingkungan pengembangan Anda.
 
 1. Memulai Visual Studio Code.
 2. Buka palet (SHIFT+CTRL+P) dan jalankan **Git: Perintah klon** untuk mengkloning repositori `https://github.com/MicrosoftLearning/mslearn-ai-language` ke folder lokal (tidak masalah folder mana).
 3. Setelah repositori dikloning, buka folder di Visual Studio Code.
 
-    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up untuk meminta Anda mempercayai kode yang Anda buka, klik opsi **Ya, saya mempercayai penulis** di pop-up.
+    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up yang meminta Anda memercayai kode yang Anda buka, klik opsi **Ya, saya memercayai pembuatnya** di pop-up.
 
 4. Tunggu sementara file tambahan diinstal untuk mendukung proyek kode C# di repositori.
 
@@ -46,7 +47,7 @@ Anda akan mengembangkan aplikasi analitik teks menggunakan Visual Studio Code. F
 
 ## Mengonfigurasi aplikasi Anda
 
-Aplikasi untuk C# dan Python telah disediakan, serta sampel file teks yang akan Anda gunakan untuk menguji ringkasan. Kedua aplikasi memiliki fungsionalitas yang sama. Pertama, Anda akan menyelesaikan beberapa bagian utama aplikasi untuk mengaktifkannya menggunakan sumber daya Azure AI Bahasa Anda.
+Aplikasi untuk C# dan Python telah disediakan, beserta contoh file teks yang akan Anda gunakan untuk menguji peringkasan. Kedua aplikasi memiliki fungsionalitas yang sama. Pertama, Anda akan menyelesaikan beberapa bagian utama aplikasi untuk mengaktifkannya menggunakan sumber daya Azure AI Bahasa Anda.
 
 1. Di Visual Studio Code, di panel **Explorer**, telusuri folder **Labfiles/01-analyze-text** Labfiles/06b-translator-sdk dan perluas folder **CSharp** atau **Python** tergantung pada preferensi bahasa Anda dan folder **text-analysis** yang ada di dalamnya. Setiap folder berisi file khusus bahasa untuk aplikasi tempat Anda akan mengintegrasikan fungsionalitas analitik teks Azure AI Bahasa.
 2. Klik kanan folder **text-analysis** yang berisi file kode Anda dan buka terminal terintegrasi. Kemudian instal paket SDK Analisis Teks Azure AI Bahasa dengan menjalankan perintah yang sesuai untuk preferensi bahasa Anda. Untuk latihan Python, instal juga paket `dotenv`:
@@ -282,7 +283,7 @@ Selain entitas yang dikategorikan, Text Analytics API dapat mendeteksi entitas y
 
 ## Membersihkan sumber daya
 
-Setelah menjelajahi layanan Azure AI Bahasa, Anda dapat menghapus sumber daya yang dibuat dalam latihan ini. Berikut caranya:
+Jika sudah selesai menjelajahi layanan Azure AI Bahasa, Anda dapat menghapus sumber daya yang Anda buat dalam latihan ini. Berikut caranya:
 
 1. Buka portal Microsoft Azure di `https://portal.azure.com`, dan masuk menggunakan akun Microsoft yang terkait dengan langganan Azure Anda.
 
