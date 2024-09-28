@@ -15,9 +15,9 @@ Salah satu skenario percakapan yang paling umum adalah memberikan dukungan melal
 Jika belum berlangganan, Anda harus menyediakan sumber daya **layanan Azure AI Bahasa**. Selain itu, untuk membuat dan menghosting basis pengetahuan untuk menjawab pertanyaan, Anda perlu mengaktifkan fitur **Jawaban Atas Pertanyaan**.
 
 1. Buka portal Microsoft Azure di `https://portal.azure.com`, dan masuk menggunakan akun Microsoft yang terkait dengan langganan Azure Anda.
-1. Di bidang pencarian di bagian atas masukkan **layanan Azure AI**, lalu tekan **Enter**.
-1. Pilih **Buat** di bawah sumber daya **Layanan Bahasa** pada hasil.
-1. **Pilih** blok **Jawaban atas pertanyaan kustom**. Lalu pilih **Lanjutkan untuk membuat sumber daya Anda**. Anda harus memasukkan pengaturan berikut:
+1. Pilih **Buat sumber daya**.
+1. Di bidang pencarian, cari **Layanan bahasa**. Kemudian, dalam hasil, pilih **Buat** di bawah **Layanan Bahasa**.
+1. Pilih blok **Menjawab pertanyaan kustom**. Lalu pilih **Lanjutkan untuk membuat sumber daya Anda**. Anda harus memasukkan pengaturan berikut:
 
     - **Langganan**: *Langganan Azure Anda*
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya*.
@@ -54,7 +54,7 @@ Untuk membuat basis pengetahuan untuk jawaban atas pertanyaan di sumber daya Azu
     4. Di bagian atas halaman, klik **Language Studio** untuk kembali ke beranda Language Studio.
 
 1. Di bagian atas portal Language Studio, di menu **Buat baru**, pilih **Jawaban atas pertanyaan kustom**.
-1. Pada wizard ***Buat proyek**, pada halaman **Pilih pengaturan bahasa**, pilih opsi untuk **Atur bahasa untuk semua proyek di sumber daya ini**, dan pilih **bahasa Inggris** sebagai bahasa. Kemudian pilih **Berikutnya**.
+1. Pada wizard ***Buat proyek**, pada halaman **Pilih pengaturan bahasa**, pilih opsi untuk **Atur bahasa untuk semua proyek**, dan pilih **bahasa Inggris** sebagai bahasa. Kemudian pilih **Berikutnya**.
 1. Pada halaman **Masukkan informasi dasar**, masukkan detail berikut:
     - **Nama** `LearnFAQ`
     - **Deskripsi**: `FAQ for Microsoft Learn`
@@ -64,7 +64,7 @@ Untuk membuat basis pengetahuan untuk jawaban atas pertanyaan di sumber daya Azu
 
 ## Tambahkan sumber ke basis pengetahuan
 
-Anda dapat membuat basis pengetahuan dari awal, tetapi biasanya dimulai dengan mengimpor pertanyaan dan jawaban dari halaman FAQ atau dokumen yang ada. Dalam hal ini, Anda akan mengimpor data dari halaman web FAQ yang ada untuk dipelajari Microsoft, dan Anda juga akan mengimpor beberapa pertanyaan dan jawaban "obrolan" yang telah ditentukan sebelumnya untuk mendukung pertukaran percakapan umum.
+Anda dapat membuat basis pengetahuan dari awal, tetapi biasanya dimulai dengan mengimpor pertanyaan dan jawaban dari halaman FAQ atau dokumen yang ada. Dalam hal ini, Anda akan mengimpor data dari halaman web FAQ yang ada untuk Microsoft Learn, dan Anda juga akan mengimpor beberapa pertanyaan dan jawaban "obrolan" yang telah ditentukan sebelumnya untuk mendukung pertukaran percakapan umum.
 
 1. Pada halaman **Kelola sumber** untuk proyek jawaban atas pertanyaan Anda, di daftar **&#9547; Tambahkan sumber**, pilih **URL**. Lalu pada kotak dialog **Tambahkan URL**, pilih **&#9547; Tambahkan URL** dan atur nama dan URL berikut sebelum memilih **Tambahkan semua** untuk menambahkannya ke basis pengetahuan:
     - **Nama**: `Learn FAQ Page`
@@ -108,7 +108,7 @@ Sekarang setelah Anda memiliki basis pengetahuan, Anda dapat mengujinya di Langu
 
 Basis pengetahuan menyediakan layanan back-end yang dapat digunakan aplikasi klien untuk menjawab pertanyaan. Sekarang Anda siap untuk mempublikasikan basis pengetahuan Anda dan mengakses antarmuka REST dari klien.
 
-1. Dalam proyek **LearnFAQ** di Language Studio, pilih halaman **Sebarkan basis pengetahuan**.
+1. Dalam proyek **LearnFAQ** di Language Studio, pilih halaman **Sebarkan basis pengetahuan** dari menu navigasi di kiri.
 1. Di bagian atas halaman, pilih **Sebarkan**. Kemudian pilih **Sebarkan** untuk mengonfirmasi bahwa Anda ingin menyebarkan basis pengetahuan.
 1. Saat penyebaran selesai, pilih **Dapatkan URL prediksi** untuk menampilkan titik akhir REST untuk basis pengetahuan Anda dan perhatikan bahwa permintaan sampel menyertakan parameter untuk:
     - **projectName**: Nama proyek Anda (yang seharusnya adalah *LearnFAQ*)
@@ -119,13 +119,13 @@ Basis pengetahuan menyediakan layanan back-end yang dapat digunakan aplikasi kli
 
 Anda akan mengembangkan aplikasi jawaban atas pertanyaan menggunakan Visual Studio Code. File kode untuk aplikasi Anda telah disediakan di repositori GitHub.
 
-> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di kode Visual Studio. Atau, ikuti langkah-langkah ini untuk mengkloningnya ke lingkungan pengembangan Anda.
+> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di Visual Studio Code. Jika belum melakukannya, ikuti langkah-langkah berikut untuk mengkloningnya ke lingkungan pengembangan Anda.
 
 1. Memulai Visual Studio Code.
 2. Buka palet (SHIFT+CTRL+P) dan jalankan **Git: Perintah klon** untuk mengkloning repositori `https://github.com/MicrosoftLearning/mslearn-ai-language` ke folder lokal (tidak masalah folder mana).
 3. Setelah repositori dikloning, buka folder di Visual Studio Code.
 
-    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up yang meminta Anda untuk memercayai kode yang Anda buka, klik opsi **Ya, saya memercayai penulisnya** pada pop-up tersebut.
+    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up yang meminta Anda memercayai kode yang Anda buka, klik opsi **Ya, saya memercayai pembuatnya** di pop-up.
 
 4. Tunggu sementara file tambahan diinstal untuk mendukung proyek kode C# di repositori.
 
