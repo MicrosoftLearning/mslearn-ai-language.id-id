@@ -16,26 +16,26 @@ Jika Anda belum memilikinya di langganan, Anda harus menyediakan sumber daya **A
 1. Di bidang pencarian di bagian atas, cari **layanan Azure AI** dan tekan **Enter**, lalu pilih **Buat** di bawah **Penerjemah** dalam hasil.
 1. Buat sumber daya dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*
-    - **Grup sumber daya**: *Memilih atau membuat grup sumber daya*
+    - **Grup sumber daya**: *Pilih atau buat grup sumber daya*
     - **Wilayah**: *Pilih wilayah yang tersedia*
     - **Nama**: *Masukkan nama unik*
     - **Tingkat harga**: Pilih **F0** (*gratis*), atau **S** (*standar*) jika F tidak tersedia.
     - **Pemberitahuan AI yang Bertanggung Jawab**: Setuju.
-1. Pilih **Tinjau + buat**, lalu pilih **Buat** untuk memprovisikan sumber daya.
+1. Pilih **Tinjau + buat**, lalu pilih **Buat** untuk menyediakan sumber daya.
 1. Tunggu hingga penyebaran selesai, lalu buka sumber daya yang disebarkan.
-1. Lihat halaman **Kunci dan Titik Akhir**. Anda akan memerlukan informasi di halaman ini nanti dalam latihan.
+1. Tampilkan halaman **Kunci dan Titik Akhir**. Anda akan memerlukan informasi di halaman ini nanti dalam latihan.
 
 ## Bersiap untuk mengembangkan aplikasi di Visual Studio Code
 
 Anda akan mengembangkan aplikasi terjemahan teks menggunakan Visual Studio Code. File kode untuk aplikasi Anda telah disediakan dalam repositori GitHub.
 
-> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di kode Visual Studio. Jika tidak, ikuti langkah-langkah ini untuk mengkloningnya ke lingkungan pengembangan Anda.
+> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di Visual Studio Code. Jika belum melakukannya, ikuti langkah-langkah berikut untuk mengkloningnya ke lingkungan pengembangan Anda.
 
 1. Memulai Visual Studio Code.
 2. Buka palet (SHIFT+CTRL+P) dan jalankan **Git: Perintah klon** untuk mengkloning repositori `https://github.com/MicrosoftLearning/mslearn-ai-language` ke folder lokal (tidak masalah folder mana).
 3. Setelah repositori dikloning, buka folder di Visual Studio Code.
 
-    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up untuk meminta Anda mempercayai kode yang Anda buka, klik **Ya, saya mempercayai opsi** penulis di pop-up.
+    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up yang meminta Anda memercayai kode yang Anda buka, klik opsi **Ya, saya memercayai pembuatnya** di pop-up.
 
 4. Tunggu sementara file tambahan diinstal untuk mendukung proyek kode C# di repositori.
 

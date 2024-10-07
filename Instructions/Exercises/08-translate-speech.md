@@ -10,12 +10,12 @@ Azure AI Speech menyertakan API terjemahan ucapan yang dapat Anda gunakan untuk 
 
 > **CATATAN** Latihan ini mengharuskan Anda menggunakan komputer dengan speaker/headphone. Untuk pengalaman terbaik, mikrofon juga diperlukan. Beberapa lingkungan virtual yang dihosting mungkin dapat menangkap audio dari mikrofon lokal Anda, tetapi jika ini tidak berhasil (atau Anda tidak memiliki mikrofon sama sekali), Anda dapat menggunakan file audio yang disediakan untuk input ucapan. Ikuti petunjuknya dengan cermat, karena Anda harus memilih opsi yang berbeda tergantung pada apakah Anda menggunakan mikrofon atau file audio.
 
-## Provisikan sumber daya *Azure AI Speech*
+## Menyediakan sumber daya *Azure AI Speech*
 
-Jika Anda belum memilikinya dalam langganan, Anda harus menyediakan sumber daya **Azure AI Speech**.
+Jika belum memilikinya di langganan, Anda harus menyediakan sumber daya **Azure AI Speech**.
 
 1. Buka portal Microsoft Azure di `https://portal.azure.com`, dan masuk menggunakan akun Microsoft yang terkait dengan langganan Azure Anda.
-1. Di bidang pencarian di bagian atas, cari **layanan Azure AI** dan tekan **Enter**, lalu pilih **Buat** di bawah **Layanan ucapan** dalam hasil.
+1. Di bidang pencarian di bagian atas, cari **layanan Azure AI** dan tekan **Enter**. Kemudian, pada hasil pencarian, pilih **Buat** di bawah **Layanan ucapan**.
 1. Buat sumber daya dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*
     - **Grup sumber daya**: *Pilih atau buat grup sumber daya*
@@ -31,13 +31,13 @@ Jika Anda belum memilikinya dalam langganan, Anda harus menyediakan sumber daya 
 
 Anda akan mengembangkan aplikasi ucapan menggunakan Visual Studio Code. File kode untuk aplikasi Anda telah disediakan dalam repositori GitHub.
 
-> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di Visual Studio code. Jika tidak, ikuti langkah-langkah ini untuk mengkloningnya ke lingkungan pengembangan Anda.
+> **Tips**: Jika Anda telah mengkloning repositori **mslearn-ai-language**, buka di Visual Studio Code. Jika belum melakukannya, ikuti langkah-langkah berikut untuk mengkloningnya ke lingkungan pengembangan Anda.
 
 1. Memulai Visual Studio Code.
 1. Buka palet (SHIFT+CTRL+P) dan jalankan **Git: Perintah klon** untuk mengkloning repositori `https://github.com/MicrosoftLearning/mslearn-ai-language` ke folder lokal (tidak masalah folder mana).
 1. Setelah repositori dikloning, buka folder di Visual Studio Code.
 
-    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up untuk meminta Anda memercayai kode yang Anda buka, klik opsi **Ya, saya memercayai penulis** di pop-up tersebut.
+    > **Catatan**: Jika Visual Studio Code menampilkan pesan pop-up yang meminta Anda memercayai kode yang Anda buka, klik opsi **Ya, saya memercayai pembuatnya** di pop-up.
 
 1. Tunggu sementara file tambahan diinstal untuk mendukung proyek kode C# di repositori.
 
@@ -67,7 +67,7 @@ Aplikasi untuk C# dan Python telah disediakan. Kedua aplikasi memiliki fungsiona
     - **C#**: appsettings.json
     - **Python**: .env
 
-1. Perbarui nilai konfigurasi untuk menyertakan  **wilayah** dan **kunci** dari sumber daya Azure AI Speech yang Anda buat (tersedia di halaman **Kunci dan Titik Akhir** untuk sumber daya Azure AI Speech Anda di portal Microsoft Azure).
+1. Perbarui nilai konfigurasi untuk menyertakan **wilayah** dan **kunci** dari sumber daya Azure AI Speech yang Anda buat (tersedia di halaman **Kunci dan Titik Akhir** untuk sumber daya Azure AI Speech Anda di portal Azure).
 
     > **CATATAN**: Pastikan untuk menambahkan *wilayah* untuk sumber daya Anda, <u>bukan</u> titik akhir!
 
