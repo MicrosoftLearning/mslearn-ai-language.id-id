@@ -88,7 +88,7 @@ Sekarang setelah proyek dibuat, Anda perlu memberi label pada data untuk melatih
 
 1. Jika halaman **Pelabelan data** belum terbuka, di panel di sebelah kiri, pilih **Pelabelan data**. Anda akan melihat daftar file yang Anda unggah ke akun penyimpanan.
 1. Di sisi kanan, di panel **Aktivitas**, pilih **Tambahkan** entitas dan tambahkan entitas baru bernama `ItemForSale`.
-1.  Ulangi langkah sebelumnya o buat entitas berikut:
+1.  Ulangi langkah sebelumnya untuk membuat entitas berikut:
     - `Price`
     - `Location`
 1. Setelah membuat tiga entitas, pilih **Ad 1.txt** sehingga Anda dapat membacanya.
@@ -96,7 +96,7 @@ Sekarang setelah proyek dibuat, Anda perlu memberi label pada data untuk melatih
     1. Sorot teks *seikat kayu bakar* dan pilih entitas **ItemForSale**.
     1. Sorot teks *Denver, CO* dan pilih entitas **Lokasi**.
     1. Sorot teks *$90* dan pilih entitas **Harga**.
-1.In panel **Aktivitas**, perhatikan bahwa dokumen ini akan ditambahkan ke himpunan data untuk melatih model.
+1. Dalam panel **Aktivitas**, perhatikan bahwa dokumen ini akan ditambahkan ke himpunan data untuk melatih model.
 1. Gunakan tombol **Dokumen berikutnya** untuk berpindah ke dokumen berikutnya, dan lanjutkan menetapkan teks ke entitas yang sesuai untuk seluruh kumpulan dokumen, menambahkan semuanya ke himpunan data pelatihan.
 1. Ketika Anda telah memberi label dokumen terakhir (*Ad 9.txt*), simpan label.
 
