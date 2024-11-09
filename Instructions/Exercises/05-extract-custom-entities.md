@@ -18,7 +18,18 @@ Jika Anda belum memilikinya di langganan, Anda harus memprovisikan sumber daya *
 1. Pilih tombol **Buat sumber daya**, cari *Bahasa*, dan buat sumber daya **Layanan Bahasa**. Saat berada di halaman untuk *Pilih fitur tambahan*, pilih fitur kustom yang berisi **Ekstraksi pengenalan entitas bernama kustom**. Buat sumber daya dengan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*
     - **Grup sumber daya**: *Memilih atau membuat grup sumber daya*
-    - **Wilayah**: *Pilih wilayah yang tersedia*
+    - **Wilayah**: *: Pilih dari salah satu wilayah berikut*\*
+        - Australia Timur
+        - India Tengah
+        - AS Timur
+        - AS Timur 2
+        - Eropa Utara
+        - US Tengah Selatan
+        - Swiss Utara
+        - UK Selatan
+        - Eropa Barat
+        - US Barat 2
+        - AS Barat 3
     - **Nama**: *Masukkan nama unik*
     - **Tingkat harga**: Pilih **F0** (*gratis*), atau **S** (*standar*) jika F tidak tersedia.
     - **Storage account**: Akun penyimpanan baru:

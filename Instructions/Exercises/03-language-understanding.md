@@ -28,7 +28,19 @@ Jika belum memilikinya di langganan, Anda harus menyediakan sumber daya **layana
 1. Provisikan sumber daya menggunakan pengaturan berikut:
     - **Langganan**: *Langganan Azure Anda*.
     - **Grup sumber daya**: *Memilih atau membuat grup sumber daya*.
-    - **Wilayah**: *Pilih wilayah yang tersedia*
+    - **Wilayah**: *: Pilih dari salah satu wilayah berikut*\*
+        - Australia Timur
+        - India Tengah
+        - Tiongkok Timur 2
+        - AS Timur
+        - AS Timur 2
+        - Eropa Utara
+        - US Tengah Selatan
+        - Swiss Utara
+        - UK Selatan
+        - Eropa Barat
+        - US Barat 2
+        - AS Barat 3
     - **Nama**: *Masukkan nama unik*.
     - **Tingkat harga**: Pilih **F0** (*gratis*), atau **S** (*standar*) jika F tidak tersedia.
     - **Pemberitahuan AI yang Bertanggung Jawab**: Setuju.
