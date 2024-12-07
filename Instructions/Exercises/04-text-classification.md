@@ -43,6 +43,16 @@ Jika Anda belum memilikinya di langganan, Anda harus memprovisikan sumber daya *
 1. Tunggu hingga penyebaran selesai, lalu buka sumber daya yang disebarkan.
 1. Tampilkan halaman **Kunci dan Titik Akhir**. Anda akan memerlukan informasi di halaman ini nanti dalam latihan.
 
+## Peran untuk pengguna Anda
+> **CATATAN**: Jika Anda melewati langkah ini, Anda akan mengalami kesalahan 403 ketika mencoba menyambung ke proyek khusus Anda. Penting bahwa pengguna Anda saat ini memiliki peran ini untuk mengakses data blob akun penyimpanan, meskipun Anda adalah pemilik akun penyimpanannya.**
+
+1. Buka akun penyimpanan di portal Microsoft Azure.
+2. Pilih **Access Control (IAM)** di menu panel navigasi kiri.
+3. Pilih **Tambahkan** untuk Menambahkan Penetapan Peran, dan pilih peran **Kontributor Data Blob Penyimpanan** di akun penyimpanan.
+4. Dalam **Tetapkan akses ke**, pilih **Pengguna, grup, atau prinsipal layanan**
+5. Pilih **Pilih anggota**.
+6. Pilih pengguna Anda. Anda dapat mencari nama pengguna di bidang **Pilih**.
+
 ## Mengunggah artikel sampel
 
 Setelah membuat layanan Azure AI Bahasa dan akun penyimpanan, Anda harus mengunggah artikel contoh untuk melatih model Anda nanti.
