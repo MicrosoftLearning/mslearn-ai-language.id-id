@@ -4,6 +4,10 @@ lab:
   module: Module 4 - Create speech-enabled apps with Azure AI services
 ---
 
+<!--
+Possibly update to use standalone AI Service instead of Foundry?
+-->
+
 # Mengenali dan mensintesis ucapan
 
 **Azure AI Speech** adalah layanan yang menyediakan fungsionalitas terkait ucapan, termasuk:
