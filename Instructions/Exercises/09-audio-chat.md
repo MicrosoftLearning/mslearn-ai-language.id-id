@@ -6,7 +6,7 @@ lab:
 
 # Mengembangkan aplikasi obrolan berkemampuan audio
 
-Dalam latihan ini, Anda menggunakan model AI generatif *Phi-4-multimodal-instruct* untuk menghasilkan respons terhadap perintah yang mencakup file audio. Anda akan mengembangkan aplikasi yang memberikan bantuan AI dengan produk baru di toko kelontong dengan menggunakan Azure AI Foundry dan layanan Inferensi Model Azure AI.
+Dalam latihan ini, Anda menggunakan model AI generatif *Phi-4-multimodal-instruct* untuk menghasilkan respons terhadap perintah yang mencakup file audio. Anda akan menyediakan aplikasi bantuan AI untuk perusahaan pemasok produsen dengan menggunakan Azure AI Foundry dan layanan Inferensi Model Azure AI untuk meringkas pesan suara pelanggan.
 
 Latihan ini memakan waktu sekitar **30** menit.
 
@@ -95,13 +95,13 @@ Setelah menyebarkan model, Anda dapat menggunakan penyebaran dalam aplikasi klie
     **Python**
 
     ```
-    cd mslearn-ai-audio/Labfiles/09-audio-chat/python
+    cd mslearn-ai-audio/Labfiles/09-audio-chat/Python
     ```
 
     **C#**
 
     ```
-    cd mslearn-ai-audio/Labfiles/09-audio-chat/c-sharp
+    cd mslearn-ai-audio/Labfiles/09-audio-chat/C-sharp
     ```
 
 1. Di panel baris perintah cloud shell, masukkan perintah berikut untuk menginstal pustaka yang akan Anda gunakan:
@@ -111,7 +111,7 @@ Setelah menyebarkan model, Anda dapat menggunakan penyebaran dalam aplikasi klie
     ```
     python -m venv labenv
     ./labenv/bin/Activate.ps1
-    pip install python-dotenv azure-identity azure-ai-projects azure-ai-inference
+    pip install -r requirements.txt azure-identity azure-ai-projects azure-ai-inference
     ```
 
     **C#**
@@ -173,9 +173,6 @@ Setelah menyebarkan model, Anda dapat menggunakan penyebaran dalam aplikasi klie
         SystemMessage,
         UserMessage,
         TextContentItem,
-        AudioContentItem,
-        InputAudio,
-        AudioContentFormat,
     )
     ```
 
@@ -230,13 +227,13 @@ Setelah menyebarkan model, Anda dapat menggunakan penyebaran dalam aplikasi klie
 
 1. Di editor kode untuk file **audio-chat.py**, di bagian loop, di bawah komentar **Dapatkan respons terhadap input audio**, tambahkan kode berikut untuk mengirimkan perintah yang menyertakan audio berikut:
 
-    <video controls src="../media/manzanas.mp4" title="Permintaan untuk apel" width="150"></video>
+    <video controls src="../media/avocados.mp4" title="Permintaan untuk avocado" width="150"></video>
 
     **Python**
 
     ```python
     # Get a response to audio input
-    file_path = "https://github.com/microsoftlearning/mslearn-ai-language/raw/refs/heads/main/labfiles/09-audio-chat/data/manzanas.mp3"
+    file_path = "https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Labfiles/09-audio-chat/data/avocados.mp3"
     response = chat_client.complete(
         messages=[
             SystemMessage(system_message),
@@ -258,7 +255,7 @@ Setelah menyebarkan model, Anda dapat menggunakan penyebaran dalam aplikasi klie
 
     ```csharp
     // Get a response to audio input
-    string audioUrl = "https://github.com/microsoftlearning/mslearn-ai-language/raw/refs/heads/main/labfiles/09-audio-chat/data/manzanas.mp3";
+    string audioUrl = "https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Labfiles/09-audio-chat/data/avocados.mp3";
     var requestOptions = new ChatCompletionsOptions()
     {
         Messages =
@@ -290,21 +287,25 @@ Setelah menyebarkan model, Anda dapat menggunakan penyebaran dalam aplikasi klie
     dotnet run
     ```
 
-1. Saat diminta, masukkan perintah `What is this customer saying in English?`
+1. Saat diminta, masukkan perintah  
+
+    ```
+    Can you summarize this customer's voice message?
+    ```
 
 1. Tinjau responsnya.
 
-### Gunakan perintah yang berbeda
+### Menggunakan file audio lain
 
 1. Di editor kode untuk kode aplikasi Anda, temukan kode yang Anda tambahkan sebelumnya di bawah komentar **Dapatkan respons terhadap input audio**. Kemudian ubah kode sebagai berikut untuk memilih file audio yang berbeda:
 
-    <video controls src="../media/caomei.mp4" title="Permintaan untuk stroberi" width="150"></video>
+    <video controls src="../media/fresas.mp4" title="Permintaan untuk stroberi" width="150"></video>
 
     **Python**
 
     ```python
     # Get a response to audio input
-    file_path = "https://github.com/microsoftlearning/mslearn-ai-language/raw/refs/heads/main/labfiles/09-audio-chat/data/caomei.mp3"
+    file_path = "https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Labfiles/09-audio-chat/data/fresas.mp3"
     response = chat_client.complete(
         messages=[
             SystemMessage(system_message),
@@ -326,7 +327,7 @@ Setelah menyebarkan model, Anda dapat menggunakan penyebaran dalam aplikasi klie
 
     ```csharp
     // Get a response to audio input
-    string audioUrl = "https://github.com/microsoftlearning/mslearn-ai-language/raw/refs/heads/main/labfiles/09-audio-chat/data/caomei.mp3";
+    string audioUrl = "https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Labfiles/09-audio-chat/data/fresas.mp3";
     var requestOptions = new ChatCompletionsOptions()
     {
         Messages =
@@ -358,10 +359,10 @@ Setelah menyebarkan model, Anda dapat menggunakan penyebaran dalam aplikasi klie
     dotnet run
     ```
 
-1. Saat diminta, masukkan perintah berikut:
-
+1. Saat diminta, masukkan perintah berikut: 
+    
     ```
-    A customer left this voice message, can you summarize it?
+    Can you summarize this customer's voice message? Is it time-sensitive?
     ```
 
 1. Tinjau responsnya. Kemudian masukkan `quit` untuk keluar dari program.
