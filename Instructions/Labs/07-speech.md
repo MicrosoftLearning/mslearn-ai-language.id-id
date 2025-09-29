@@ -243,9 +243,17 @@ Speech Synthesis Markup Language (SSML) memungkinkan Anda menyesuaikan cara ucap
     
     <video controls src="https://github.com/MicrosoftLearning/mslearn-ai-language/raw/refs/heads/main/Instructions/media/Output2.mp4" title="Waktunya adalah 5:30. Waktu untuk mengakhiri lab ini." width="150"></video>
 
-## (OPSIONAL) Bagaimana jika Anda memiliki mikrofon dan speaker?
+## Penghapusan
 
-Dalam latihan ini, Anda menggunakan file audio untuk input dan output ucapan. Mari kita lihat bagaimana kode dapat dimodifikasi untuk menggunakan perangkat keras audio.
+Setelah selesai menjelajahi Azure AI Speech, Anda harus menghapus sumber daya yang telah Anda buat dalam latihan ini untuk menghindari biaya Azure yang tidak perlu.
+
+1. Tutup panel Azure Cloud Shell
+1. Di portal Azure, telusuri sumber daya Azure AI Speech yang Anda buat di lab ini.
+1. Pada halaman sumber daya, pilih **Hapus** dan ikuti instruksi untuk menghapus sumber daya.
+
+## Bagaimana jika Anda memiliki mikrofon dan speaker?
+
+Dalam latihan ini, lingkungan Azure Cloud Shell yang kami gunakan tidak mendukung perangkat keras audio. Jadi, Anda menggunakan file audio untuk input dan output ucapan. Mari lihat bagaimana kode dapat dimodifikasi untuk menggunakan perangkat keras audio jika Anda memilikinya.
 
 ### Menggunakan pengenalan ucapan dengan mikrofon
 
@@ -292,14 +300,6 @@ if speak.reason != speech_sdk.ResultReason.SynthesizingAudioCompleted:
 ```
 
 > **Catatan**: Speaker default sistem adalah output audio default, sehingga Anda juga dapat menghilangkan AudioConfig sama sekali!
-
-## Penghapusan
-
-Setelah selesai menjelajahi Azure AI Speech, Anda harus menghapus sumber daya yang telah Anda buat dalam latihan ini untuk menghindari biaya Azure yang tidak perlu.
-
-1. Tutup panel Azure Cloud Shell
-1. Di portal Azure, telusuri sumber daya Azure AI Speech yang Anda buat di lab ini.
-1. Pada halaman sumber daya, pilih **Hapus** dan ikuti instruksi untuk menghapus sumber daya.
 
 ## Informasi selengkapnya
 

@@ -227,7 +227,7 @@ Jika sudah selesai menjelajahi layanan Azure AI Speech, Anda dapat menghapus sum
 
 ## Bagaimana jika Anda memiliki mikrofon dan speaker?
 
-Dalam latihan ini, Anda menggunakan file audio untuk input dan output ucapan. Mari kita lihat bagaimana kode dapat dimodifikasi untuk menggunakan perangkat keras audio.
+Dalam latihan ini, lingkungan Azure Cloud Shell yang kami gunakan tidak mendukung perangkat keras audio. Jadi, Anda menggunakan file audio untuk input dan output ucapan. Mari lihat bagaimana kode dapat dimodifikasi untuk menggunakan perangkat keras audio jika Anda memilikinya.
 
 ### Menggunakan terjemahan ucapan dengan mikrofon
 
@@ -258,7 +258,7 @@ Dalam latihan ini, Anda menggunakan file audio untuk input dan output ucapan. Ma
             "hi": "hi-IN-MadhurNeural"
    }
    speech_config.speech_synthesis_voice_name = voices.get(targetLanguage)
-   audio_config_out = speech_sdk.audio.AudioConfig(use_default_speaker=True)
+   audio_config_out = speech_sdk.audio.AudioOutputConfig(use_default_speaker=True)
    speech_synthesizer = speech_sdk.SpeechSynthesizer(speech_config, audio_config_out)
    speak = speech_synthesizer.speak_text_async(translation).get()
    if speak.reason != speech_sdk.ResultReason.SynthesizingAudioCompleted:
