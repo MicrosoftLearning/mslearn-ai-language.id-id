@@ -56,7 +56,7 @@ Anda akan mengembangkan kode menggunakan Cloud Shell dari portal Azure. File kod
     git clone https://github.com/microsoftlearning/mslearn-ai-language
     ```
 
-    > **Tips**: Saat Anda memasukkan perintah ke cloudshell, output-nya mungkin mengambil sejumlah besar buffer layar. Anda dapat menghapus layar dengan memasukkan `cls` perintah untuk mempermudah fokus pada setiap tugas.
+    > **Tips**: Saat Anda memasukkan perintah ke cloudshell, ouputnya mungkin mengambil sejumlah besar buffer layar. Anda dapat menghapus layar dengan memasukkan `cls` perintah untuk mempermudah fokus pada setiap tugas.
 
 1. Setelah repositori dikloning, navigasikan ke folder yang berisi file kode aplikasi obrolan:  
 
