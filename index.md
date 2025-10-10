@@ -14,6 +14,7 @@ Latihan berikut ini dirancang untuk memberi Anda pengalaman pembelajaran langsun
 
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Labs'" %} {% for activity in labs  %}
 <hr>
+
 ### [{{ activity.lab.title }}]({{ site.github.url }}{{ activity.url }})
 
 {{activity.lab.description}}
