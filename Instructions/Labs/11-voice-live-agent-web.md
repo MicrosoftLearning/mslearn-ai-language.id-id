@@ -248,7 +248,7 @@ Hanya ada dua nilai yang harus Anda ubah di bagian atas skrip penyebaran **azdep
 1. Jalankan perintah berikut di Cloud Shell untuk mulai mengedit skrip penyebaran.
 
     ```bash
-    cd ~/voice-live-web
+    cd ~/01-voice-live-web
     ```
     
     ```bash
