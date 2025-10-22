@@ -1,73 +1,73 @@
-# Persyaratan
+# Requirements
 
-## Eksekusi di Cloud Shell
+## Run in Cloud Shell
 
-* Langganan Azure dengan akses OpenAI
-* Jika dijalankan di Azure Cloud Shell, pilih shell Bash. Azure CLI dan Azure Developer CLI disertakan dalam Cloud Shell.
+* Azure subscription with OpenAI access
+* If running in the Azure Cloud Shell, choose the Bash shell. The Azure CLI and Azure Developer CLI are included in the Cloud Shell.
 
-## Menjalankan secara lokal
+## Run locally
 
-* Anda dapat menjalankan aplikasi web secara lokal setelah menjalankan skrip penyebaran:
+* You can run the web app locally after running the deployment script:
     * [Azure Developer CLI (azd)](https://learn.microsoft.com/en-us/azure/developer/azure-developer-cli/install-azd)
     * [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
-    * Langganan Azure dengan akses OpenAI
+    * Azure subscription with OpenAI access
 
 
-## Variabel Lingkungan
+## Environment Variables
 
-File `.env` dibuat oleh skrip *azdeploy.sh*. Titik akhir model AI, kunci API, dan nama model ditambahkan selama penyebaran sumber daya.
+The  `.env` file is created by the *azdeploy.sh* script. The AI model endpoint, API key, and model name are added during the deployment of the resources.
 
-## Penyebaran sumber daya Azure
+## Azure resource deployment
 
-`azdeploy.sh` yang disediakan membuat sumber daya yang diperlukan di Azure:
+The provided `azdeploy.sh` creates the required resources in Azure:
 
-* Ubah dua variabel di bagian atas skrip agar sesuai dengan kebutuhan Anda. Jangan ubah yang lain.
-* Skrip:
-    * Menyebarkan model *gpt-4o* menggunakan AZD.
-    * Membuat layanan Azure Container Registry
-    * Menggunakan tugas ACR untuk membuat dan menyebarkan gambar Dockerfile ke ACR
-    * Membuat Paket App Service
-    * Membuat Aplikasi App Service Web App
-    * Mengonfigurasi aplikasi web untuk gambar kontainer di ACR
-    * Mengonfigurasi variabel lingkungan aplikasi web
-    * Skrip akan menyediakan titik akhir App Service
+* Change the two variables at the top of the script to match your needs, don't change anything else.
+* The script:
+    * Deploys the *gpt-4o* model using AZD.
+    * Creates Azure Container Registry service
+    * Uses ACR tasks to build and deploy the Dockerfile image to ACR
+    * Creates the App Service Plan
+    * Creates the App Service Web App
+    * Configures the web app for container image in ACR
+    * Configures the web app environment variables
+    * The script will provide the App Service endpoint
 
-Skrip menyediakan dua opsi penyebaran: 1. Penyebaran penuh; dan 2. Penyebaran ulang gambar saja. Opsi 2 hanya untuk pascapenyebaran saat Anda ingin bereksperimen dengan perubahan dalam aplikasi. 
+The script provides two deployment options: 1. Full deployment; and 2. Redeploy the image only. Option 2 is only for post-deployment when you want to experiment with changes in the application. 
 
-> Catatan: Anda dapat menjalankan skrip di PowerShell, atau Bash, menggunakan perintah `bash azdeploy.sh`. Perintah ini juga memungkinkan Anda menjalankan skrip di Bash tanpa harus menjadikannya dapat dieksekusi.
+> Note: You can run the script in PowerShell, or Bash, using the `bash azdeploy.sh` command, this command also let's you run the script in Bash without having to make it an executable.
 
-## Pengembangan lokal
+## Local development
 
-### Provisikan model AI ke Azure
+### Provision AI model to Azure
 
-Anda dapat menjalankan proyek secara lokal dan hanya menyediakan model AI dengan mengikuti langkah-langkah berikut:
+You can run the run the project locally and only provision the AI model following these steps:
 
-1. **Menginisialisasi lingkungan** (pilih nama deskriptif):
+1. **Initialize environment** (choose a descriptive name):
 
    ```bash
    azd env new gpt-realtime-lab --confirm
    # or: azd env new your-name-gpt-experiment --confirm
    ```
    
-   **Penting**: Nama ini menjadi bagian dari nama sumber daya Azure Anda!  
-   Bendera `--confirm` mengatur ini sebagai lingkungan default Anda tanpa meminta.
+   **Important**: This name becomes part of your Azure resource names!  
+   The `--confirm` flag sets this as your default environment without prompting.
 
-1. **Atur grup sumber daya Anda**:
+1. **Set your resource group**:
 
    ```bash
    azd env set AZURE_RESOURCE_GROUP "rg-your-name-gpt"
    ```
 
-1. **Proses masuk dan provisi sumber daya AI**:
+1. **Login and provision AI resources**:
 
    ```bash
    az login
    azd provision
    ```
 
-    > **Penting**: JANGAN jalankan `azd deploy` - aplikasi ini tidak dikonfigurasi di templat AZD.
+    > **Important**: Do NOT run `azd deploy` - the app is not configured in the AZD templates.
 
-Jika Anda hanya menyediakan model menggunakan metode `azd provision`, Anda HARUS membuat file `.env` di akar direktori dengan entri berikut:
+If you only provisioned the model using the `azd provision` method you MUST create a `.env` file in the root of the directory with the following entries:
 
 ```
 AZURE_VOICE_LIVE_ENDPOINT=""
@@ -78,27 +78,27 @@ VOICE_LIVE_INSTRUCTIONS="You are a helpful AI assistant with a focus on world hi
 VOICE_LIVE_VERBOSE="" #Suppresses excessive logging to the terminal if running locally
 ```
 
-Catatan:
+Notes:
 
-1. Titik akhir adalah titik akhir untuk model dan hanya boleh menyertakan `https://<proj-name>.cognitiveservices.azure.com`.
-1. Kunci API adalah kunci untuk model.
-1. Model adalah nama model yang digunakan selama penyebaran.
-1. Anda dapat mengambil nilai-nilai ini dari portal AI Foundry.
+1. The endpoint is the endpoint for the model and it should only include `https://<proj-name>.cognitiveservices.azure.com`.
+1. The API key is the key for the model.
+1. The model is the model name used during deployment.
+1. You can retrieve these values from the AI Foundry portal.
 
-### Menjalankan proyek secara lokal
+### Running the project locally
 
-Proyek dibuat dan dikelola menggunakan **uv**, tetapi tidak diperlukan untuk dijalankan. 
+The project was was created and managed using **uv**, but it is not required to run. 
 
-Jika Anda menginstal **uv**:
+If you have **uv** installed:
 
-* Jalankan `uv venv` untuk membuat lingkungan
-* Jalankan `uv sync` untuk menambahkan paket
-* Alias dibuat untuk aplikasi web: `uv run web` untuk memulai skrip `flask_app.py`.
-* File requirements.txt dibuat dengan `uv pip compile pyproject.toml -o requirements.txt`
+* Run `uv venv` to create the environment
+* Run `uv sync` to add packages
+* Alias created for web app: `uv run web` to start the `flask_app.py` script.
+* requirements.txt file created with `uv pip compile pyproject.toml -o requirements.txt`
 
-Jika Anda belum menginstal **uv**:
+If you don't have **uv** installed:
 
-* Buat lingkungan: `python -m venv .venv`
-* Aktifkan lingkungan: `.\.venv\Scripts\Activate.ps1`
-* Instal dependensi: `pip install -r requirements.txt`
-* Jalankan aplikasi (dari akar proyek): `python .\src\real_time_voice\flask_app.py`
+* Create environment: `python -m venv .venv`
+* Activate environment: `.\.venv\Scripts\Activate.ps1`
+* Install dependencies: `pip install -r requirements.txt`
+* Run application (from project root): `python .\src\real_time_voice\flask_app.py`
